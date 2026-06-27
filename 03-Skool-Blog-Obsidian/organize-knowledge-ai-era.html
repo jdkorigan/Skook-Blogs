@@ -29,7 +29,6 @@ body {
   print-color-adjust: exact;
 }
 article.post {
-  /* Lists step in from headings; subsection labels (**…**) stay flush with h2/h3 */
   --in-2: 1.875rem;
   --in-nested: 1.15rem;
   width: 820px;
@@ -57,7 +56,6 @@ h2 {
   color: #ffffff;
   font-weight: 700;
 }
-/* Card “The system flow”: no second underline (custom hr div below title) */
 article.post div[style*="background:#1e3a5f"] > h2,
 article.post div[style*="background: #1e3a5f"] > h2 {
   border-bottom: none;
@@ -70,10 +68,6 @@ h3 {
   font-weight: 600;
 }
 p { margin: 0.5em 0; color: #f8fafc; }
-/*
- * Bold must inherit so accent colors work: <span style="color:#5DADE2"><strong>Copilot</strong></span>
- * A global color:#fff on strong was overriding every inline IQ color.
- */
 article.post strong,
 article.post b {
   color: inherit;
@@ -90,8 +84,6 @@ article.post div[style*="border-left:3px solid #7dd3fc"] strong {
   color: #0f172a;
   font-weight: 700;
 }
-/* —— Indentation hierarchy (main column markdown) —— */
-/* Bold-only labels (**Today's enterprise reality**, **Result**, **What it does**) align with headings — no extra padding */
 article.post > p:has(> strong:only-child) {
   padding-left: 0;
   margin-left: 0;
@@ -101,7 +93,6 @@ article.post > p:has(> strong:only-child) {
 article.post > h2 + p:has(> strong:only-child) {
   margin-top: 0.35em;
 }
-/* Top-level bullets / ordered lists: only lists are indented */
 article.post > ul,
 article.post > ol {
   padding-left: var(--in-2);
@@ -109,7 +100,6 @@ article.post > ol {
   margin-bottom: 0.55em;
   list-style-position: outside;
 }
-/* Deeper nesting inside main-column lists */
 article.post ul ul,
 article.post ul ol,
 article.post ol ul,
@@ -118,7 +108,6 @@ article.post ol ol {
   margin-top: 0.3em;
   margin-bottom: 0.3em;
 }
-/* "The system flow" card: align numbered IQ list with the same scale as body lists */
 article.post div[style*="background:#1e3a5f"] > ol,
 article.post div[style*="background: #1e3a5f"] > ol {
   padding-left: var(--in-2) !important;
@@ -161,7 +150,6 @@ pre {
   border: 1px solid rgba(255,255,255,0.12);
 }
 pre code { background: none; padding: 0; color: inherit; }
-/* Inline callouts / gradients / image frames — keep fills in PDF */
 div[style*="background:#1e3a5f"], div[style*="background: #1e3a5f"],
 div[style*="background:#cbd5e1"], div[style*="background: #cbd5e1"],
 div[style*="background:linear-gradient"],
@@ -173,17 +161,14 @@ span[style*="background:#"] {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
-/* Skool-style callouts use inline margins on gray #cbd5e1 boxes (do not zero them out). */
 
 html { font-size: 14px; }
-/* Same page chrome as Markdown preview / PDF: fill viewport with PAGE_BG */
 html, body {
   min-height: 100vh;
   color-scheme: dark;
   background-color: #002451 !important;
   background: #002451 !important;
 }
-/* Fill the browser — override PRINT_CSS article width (820px) */
 article.post {
   width: min(96vw, 1680px) !important;
   max-width: min(96vw, 1680px) !important;
@@ -198,7 +183,6 @@ article.post {
     padding: 16px 12px 28px !important;
   }
 }
-/* HTML-only: light “Why … IQ” callouts — visible bullets + keep Skool indent (global li::marker was same as #cbd5e1 bg) */
 article.post div[style*="background:#cbd5e1"] > div[style*="border-left:3px solid #7dd3fc"] ul,
 article.post div[style*="background: #cbd5e1"] > div[style*="border-left:3px solid #7dd3fc"] ul {
   list-style-type: disc !important;

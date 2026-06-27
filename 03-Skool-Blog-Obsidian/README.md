@@ -2,30 +2,35 @@
 
 How to capture YouTube, LinkedIn, and other sources into a local Obsidian vault — and search it with Codex, Claude, or Cursor.
 
-## Article
+## Public links (SKOOL-Blogs-Publication)
 
-- **HTML:** `html/organize-knowledge-ai-era.html`
-- **Source:** `Organize your knowledge in the age of AI.md` (from `Doc1.docx`)
-- **Images:** `images/` (`image1.png` … `image5.png`)
+- **HTML:** [organize-knowledge-ai-era.html](https://jdkorigan.github.io/SKOOL-Blogs-Publication/03-Skool-Blog-Obsidian/organize-knowledge-ai-era.html)
+- **Hub:** [SKOOL-Blogs-Publication index](https://jdkorigan.github.io/SKOOL-Blogs-Publication/)
 
-## Python (uv, 3.14)
+After editing Markdown or images, rebuild and copy into `SKOOL-Blogs-Publication/03-Skool-Blog-Obsidian/` then commit the publication repo.
+
+## Build
+
+Shared export lives in **`0-Skool-Blog-Templates`** — see `README-BUILD.md`.
 
 ```powershell
-cd 3-Skool-Blog-Obsidian
-uv sync --python 3.14
+cd 0-Skool-Blog-Templates
+uv sync
+
+cd ../3-Skool-Blog-Obsidian
+python code/export_md_to_html.py --open
 ```
 
-Regenerate HTML from Markdown (Skool dark theme, images inlined):
+Optional PDF (`uv sync --extra pdf` in templates first):
 
 ```powershell
-uv run python code/export_md_to_html.py -o html/organize-knowledge-ai-era.html
-uv run python code/export_md_to_html.py -o html/organize-knowledge-ai-era.html --open
+python code/export_md_to_pdf.py
 ```
 
-Optional PDF export (requires `playwright`):
+## Publish
 
 ```powershell
-uv add playwright
-uv run playwright install chromium
-uv run python code/export_md_to_pdf.py -o html/organize-knowledge-ai-era.pdf
+.\0-Skool-Blog-Templates\scripts\publish_to_publication.ps1 -Module 3-Skool-Blog-Obsidian -Slot 03
+cd SKOOL-Blogs-Publication
+git add -A && git commit -m "Publish 03-Skool-Blog-Obsidian" && git push
 ```
