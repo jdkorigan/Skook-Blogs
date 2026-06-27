@@ -4,7 +4,7 @@ For several years, I have spent quite a lot of time browsing the Internet to lea
 
 I have spent just as much time looking for ways to retrieve that information later: notes, Chrome shortcuts, organizing videos in YouTube, etc.
 
-A few days ago, I decided to find a system that is more appropriate and better suited to the AI world. I tested “Obsidian” (it’s free), and it seems quite good when combined with Codex, Claude, Cursor, and similar tools.
+A few days ago, I decided to find a system that is more appropriate and better suited to the AI world, especially as Markdown (.md) files have become central to how LLMs and coding agents work. I tested â€œObsidianâ€ (itâ€™s free), and it seems quite good when combined with Codex, Claude, Cursor, and similar tools.
 
 So there is this tool, which according to my sources dates back to 2022 for version 1.0. Here is a summary:
 
@@ -14,50 +14,72 @@ So there is this tool, which according to my sources dates back to 2022 for vers
 - **It is highly extensible**: many plugins let you add features such as tasks, calendars, Kanban boards, AI, sync, web publishing, and more.
 - **It is popular for documentation and knowledge management**: useful for organizing ideas, preparing articles, managing projects, or structuring technical watch/technology monitoring.
 
-I’ll take the example of Will’s videos, especially one about “ontology”. If you don’t have the right tools, it becomes difficult to remember whether it was on the YouTube channel, Fabric Dojo, AI Dojo, and so on.
+Iâ€™ll take the example of Willâ€™s videos, especially one about â€œontologyâ€. If you donâ€™t have the right tools, it becomes difficult to remember whether it was on the YouTube channel, Fabric Dojo, AI Dojo, and so on.
 
 ---
 
-## Installation et utilisation
+## Installation and usage
 
-Je vais décrire comment installer l’outil et faire ensuite une recherche.
+I'll describe how to install the tool and then how to run a search.
 
-### 1. Installer l’extension Obsidian Web Clipper
+### 1. Download and install Obsidian
 
-Dans votre browser (chrome pour moi) installer l’extension “Obsidian Web Clipper”.
+Go to the official download page â€” [obsidian.md/download](https://obsidian.md/download) â€” and install the version for your operating system (Windows, macOS, Linux, iOS, or Android).
+
+### 2. Create a Vault
+
+Open Obsidian and create a Vault â€” choose a folder somewhere on your hard drive (for example `C:\Users\...\Documents\My Obsidian Vault`). Obsidian stores all your notes as Markdown files in that folder.
+
+### 3. Create a template
+
+Ask Codex or Claude to prepare a template for you. For example:
+
+*â€œCreate Obsidian Web Clipper templates for YouTube and LinkedIn and export them so I can import them.â€*
+
+In principle, inside your vault you should see a folder structure like this (`Obsidian > My Obsidian Vault > 90 Templates`):
+
+![Vault template folder structure](images/image6.png)
+
+### 4. Install the Obsidian Web Clipper extension
+
+In your browser (Chrome Web Store for me), install the â€œObsidian Web Clipperâ€ extension.
 
 ![Obsidian Web Clipper extension](images/image1.png)
 
-### 2. Installer Obsidian et créer un Vault
+### 5. Import both templates into Obsidian
 
-Installer Obsidian sur votre poste local et créez un Vault.
+Import both templates via **Web Clipper Imports** â€” click **Options** in the Web Clipper extension to open the window.
 
-- demander à Codex ou Claude de vous preparer un template, avec une source comme “Youtube”, “Linkedin”. Une fois créé il suffit d’importer les templates créés.
+![Web Clipper Options menu](images/image7.png)
 
 ![Obsidian templates](images/image2.png)
 
-### 3. Capturer une vidéo YouTube dans le Vault
+### 6. Capture a YouTube video into the Vault
 
-lors de la lecture de la video, appuyer pour ouvrir le plugin Obsidian et ajouter la note à votre Vault en local
+While watching the video, click to open the Obsidian plugin and add the note to your local Vault.
 
 ![Web Clipper on YouTube](images/image3.png)
 
-### 4. Vérifier la note créée
+### 7. Verify the note was created
 
-Regarder si votre note a bien été créée
+Check that your note was created successfully â€” open Obsidian and go to **10 Sources** > **YouTube**.
 
 ![Note created in Obsidian](images/image4.png)
 
-### 5. Indiquer le Vault à votre Coding Agent
+### 8. Point your coding agent or LLM to the Vault
 
-Il convient sans doute d’indiquer à votre Coding Agent l’emplacement de votre Obsidian Vault pour accélerer la recherche. Comme par exemple “pour les recherche Obsidian, fais tes recherches dans C:\...\obsidian vault (le nom de votre Vault)”
+Tell your coding agent or LLM (for example in `AGENTS.md`) to use Obsidian as searchable memory â€” and where your vault lives. For example:
 
-Ensuite par exemple dans Codex il suffit de taper
+*â€œUse my Obsidian vault at `C:\Users\...\Obsidian\My Obsidian Vault` as your knowledge base when I ask you to search my notes.â€*
 
-![Codex search in Obsidian Vault](images/image5.png)
+For a search, you can write:
 
-### 6. Autres sources et fichiers Markdown
+*â€œFabric Ontologies + Will search Obsidian return sourceâ€*
 
-Si vous voulez le faire pour Linkedi ou d’autre source il suffit de tester et lire un peu la doc.
+![Source found in Obsidian](images/image5.png)
 
-Ensuite il y a l’aspect fichier .md qui doivent être gérés pour les LLM et qui me semble un point important à tenir compte pour le future
+### 9. Other sources and Markdown files
+
+If you want to do this for LinkedIn or other sources, just try it out and read a bit of the documentation.
+
+Then there is the question of .md files that need to be managed for LLMs, which seems to me an important point to keep in mind for the future.
